@@ -5,8 +5,7 @@ def chunk_rst_text(filepath, filename):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Split by header pattern (text followed by === or ---)
-    # This regex looks for lines followed by header markers
+    # Split by header pattern
     sections = re.split(r'\n(?=[^\n]+\n[=\-~^"]{3,}\n)', content)
 
     chunks = []
@@ -38,5 +37,6 @@ def print_chunk(chunk):
     print(f"{chunk['text']}")
     print(f"{'-' * line_length}")
     print("\n\n")
+
 
 
