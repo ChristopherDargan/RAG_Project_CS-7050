@@ -12,7 +12,7 @@ DATA_DIR = HOME / 'rag_project' / 'scikit-learn-docs' / '_sources' / 'modules'
 DB_DIR   = HOME / 'rag_project' / 'vector_store'
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))    # for obvious reasons, the key is not includes in a public repository so the build/demo cant run without one.
 
 all_chunks = []
 all_embeddings = []
@@ -66,3 +66,4 @@ with open(DB_DIR / 'chunks_metadata.json', 'w') as f:
     json.dump(all_chunks, f, indent=2)
 
 print(f"\nSaved all indices to {DB_DIR}")
+
